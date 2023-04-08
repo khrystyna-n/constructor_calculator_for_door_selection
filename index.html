@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <title>calculator_drag'n'drop</title>
+  </head>
+  <body>
+    <main>
+      <div class="modal-container">
+        <!-- screen width warning -->
+        <div class="modal-message__wrapper">
+          <div class="modal-message__message-text">
+            <span>warning mininal screen size is 915px widht</span>
+          </div>
+        </div>
+
+        <!-- header-section -->
+        <section>
+          <div class="container">
+            <div class="container__header">
+              <div class="header__wrapper">
+                <form id="form">
+                  <!-- type="submit" method="post" -->
+                  <div class="header__wrapper_form">
+                    <div class="header__col-1">
+                      <div class="header__input">
+                        <p class="header__input_name">Высота двери</p>
+                        <input id="height" placeholder="2200" type="number" min="0" name="height" />
+                        <p class="header__input_value">мм</p>
+                      </div>
+                      <div class="header__input">
+                        <p class="header__input_name">Ширина двери</p>
+                        <input id="width" placeholder="2000" type="number" min="0" name="width"/>
+                        <p class="header__input_value">мм</p>
+                      </div>
+                      <div class="header__select">
+                        <p class="header__select_name">Направляющая</p>
+                        <select id="napravla" name="napravla">
+                        </select>
+                        <p class="header__input_value">мм</p>
+                      </div>
+                    </div>
+                    <div class="header__col-2">
+                      <div class="header__select">
+                        <p class="header__select_name">Выбор перегородки</p>
+                        <select id="peregorodki" name="peregorodki"></select>
+                      </div>
+                      <div class="glasses__wrapper">
+                        <p class="glasses__title">Выбор стекла</p>
+                        <ul id="steklo" class="glass__block" name="steklo"></ul>
+                      </div>
+                    </div>
+                    <div class="header__col-3">
+                      <div class="header__select">
+                        <p class="header__select_name">Выбор профилей</p>
+                        <select id="profil" name="profil"></select>
+                      </div>
+                      <div class="header__select">
+                        <p class="header__select_name">Выбор крышек</p>
+                        <select id="krishka" name="krishka"></select>
+                      </div>
+                      <div class="header__drag-wrapper">
+                        <p>Добавить перегородки</p>
+                        <div class="header__dragelem-block">
+                          
+                          <span class="header__vertical-divider draggable" draggable="true" data-drag="vertical"> </span>
+                          <span class="header__horizontal-divider draggable" draggable="true" data-drag="horizontal"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- calculator-section -->
+        <section>
+          <div class="container">
+            <div class="container__body">
+              <!-- container__body-wrapper for nesting other blocks from JS -->
+              <div class="container__body_wrapper">
+                <!-- container__main-board generate from JS -->
+                <div class="container__main-board droptarget">
+                 
+                  <!-- size-indication -->
+                  <div class="container__arrow-vertical">
+                    <span class="container__arrow-vertical_size-info"
+                      ></span
+                    >
+                    <div>
+                      <span class="container__arrow-vertical_arrow_top"></span>
+                    </div>
+                    <div>
+                      <span
+                        class="container__arrow-vertical_arrow_bottom"
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="container__arrow-horizontal">
+                    <span class="container__arrow-horizontal_size-info"
+                      ></span
+                    >
+                    <div>
+                      <span
+                        class="container__arrow-horizontal_arrow_left"
+                      ></span>
+                    </div>
+                    <div>
+                      <span
+                        class="container__arrow-horizontal_arrow_right"
+                      ></span>
+                    </div>
+                  </div>
+                  <!-- dynamic content -->
+                  
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- summary-section     -->
+        <section>
+          <div class="container">
+            <div class="container__summary-wrapper">
+              <div class="container__summary-wrapper_title">
+                <h2>
+                  Итого:
+                  <p class="container__summary-wrapper_p"> 0 тенге</p>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- modal-container end -->
+      </div>
+    </main>
+    <script type="module" defer src="scripts/index.js"></script>
+  </body>
+</html>

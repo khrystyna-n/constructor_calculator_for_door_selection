@@ -1,0 +1,17 @@
+{
+  "name": "calculator_drag'n'drop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server db/mockDB.json --port 3333"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "json-server": "^0.17.2"
+  }
+}
